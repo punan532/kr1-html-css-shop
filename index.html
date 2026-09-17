@@ -1,81 +1,197 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог товаров</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <div class = "site-header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
         <a class="site-logo" href="index.html">Каталог товаров</a>
         <nav class="site-nav" aria-label="Основная навигация">
-            <ul class="site-nav__list">
-                <li><a href = "index.html">Главная</a></li>
-                <li><a href = "#popular">Популярные товары</a></li>
-                <li><a href = "#advantages">Преимущества</a></li>
-                <li><a href = "#contacts">Контакты</a></li>
-            </ul>
+          <ul class="site-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="#popular">Популярные товары</a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
         </nav>
-    </div>
-  </header>
+      </div>
+    </header>
 
-  <main>
+    <main>
+      <section class="hero">
+        <h2>Главная страница проекта</h2>
+        <p>
+          Это стартовая страница учебного frontend-проекта. В дальнейшем здесь
+          будет разработан многостраничный сайт интернет-магазина или каталога
+          услуг.
+        </p>
+        <a class="button" href="#Популярное">Перейти к каталогу</a>
+      </section>
 
-    <section class = "hero">
-      <h2>Главная страница проекта</h2>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем здесь будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
-      <a class = "button" href = "#Популярное">Перейти к каталогу</a>
-    </section>
-
-
-    <section class = "section" id = "advantages">
+      <section class="section" id="advantages">
         <h2>Преимущества проекта</h2>
 
-        <ul class = "advantages-list">
-            <li>Понятная структура</li>
-            <li>Семантические блоки страницы</li>
-            <li>Подключение внешнего css-файла</li>
-            <li>Подготовка к разработке многостраничного сайта</li>
+        <ul class="advantages-list">
+          <li>Понятная структура</li>
+          <li>Семантические блоки страницы</li>
+          <li>Подключение внешнего css-файла</li>
+          <li>Подготовка к разработке многостраничного сайта</li>
         </ul>
-    </section>
+      </section>
 
-    <section class = "section" id = "popular">
+      <section class="section" id="popular">
         <h2>Популярные товары</h2>
 
         <article class="product-card">
-            <h3>Товар 1</h3>
-            <p>Краткое описание товара</p>
-            <p>Цена 1000р</p>
+          <h3>Товар 1</h3>
+          <p>Краткое описание товара</p>
+          <p>Цена 1000р</p>
+          <button
+            class="product-card__button"
+            type="button"
+            data-product="Товар 1"
+          >
+            Заказать
+          </button>
         </article>
 
         <article class="product-card">
-            <h3>Товар 2</h3>
-            <p>Краткое описание товара</p>
-            <p>Цена 10900р</p>
+          <h3>Товар 2</h3>
+          <p>Краткое описание товара</p>
+          <p>Цена 10900р</p>
+          <button
+            class="product-card__button"
+            type="button"
+            data-product="Товар 2"
+          >
+            Заказать
+          </button>
         </article>
 
         <article class="product-card">
-            <h3>Товар 3</h3>
-            <p>Краткое описание товара</p>
-            <p>Цена 1200р</p>
+          <h3>Товар 3</h3>
+          <p>Краткое описание товара</p>
+          <p>Цена 1200р</p>
+          <button
+            class="product-card__button"
+            type="button"
+            data-product="Товар 3"
+          >
+            Заказать
+          </button>
         </article>
-    </section>
+      </section>
 
-    <aside class = "aside-info">
+      <aside class="aside-info">
         <h2>Информация для студентов</h2>
-        <p>Это дополнительная информация, которая может быть полезна для студентов.</p>
-    </aside>
-  </main>
+        <p>
+          Это дополнительная информация, которая может быть полезна для
+          студентов.
+        </p>
+      </aside>
+    </main>
 
-  <footer id = "contacts">
-    <p>&copy; 2026 Учебный проект</p>
-    <p>Пунанов</p>
-  </footer>
-</body>
+    <footer id="contacts">
+      <p>&copy; 2026 Учебный проект</p>
+      <p>Пунанов</p>
+    </footer>
+
+    <dialog
+      class="order-dialog"
+      id="order-dialog"
+      aria-labelledby="order-dialog-title"
+    >
+    <h2 id = "order-dialog-title">Оформление заявки</h2>
+    <form class = "order-form" id = "order-form" action = "#" method = "post" novalidate>
+        <input id = "selected-product" name = "selected-product" type = "hidden">
+
+        <div class = "form-field">
+            <label for = "order-name">Имя</label>
+            <input
+                id = "order-name"
+                name = "name"
+                type = "text"
+                placeholder = "Введите ваше имя"
+                minlength = "2"
+                autocomplete = "given-name"
+                required
+            >
+        </div>
+
+        <div class = "form-field">
+            <label for = "order-email">Email</label>
+            <input
+                id = "order-email"
+                name = "email"
+                type = "email"
+                placeholder = "email@gmail.com"
+                autocomplete = "email"
+                required
+                >
+        </div>
+
+        <div class = "form-field">
+            <label for = "order-phone">Номер телефона</label>
+            <input
+                id = "order-phone"
+                name = "phone"
+                type = "tel"
+                inputmode = "tel"
+                placeholder = "+7 (999) 999-99-99"
+                pattern = "\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}"
+                autocomplete = "tel"
+                required
+            >
+            <small>Формат: +7 (999) 999-99-99</small>
+        </div>
+
+        <div class = "form-field">
+          <label for = "order-date">Дата для связи</label>
+          <input
+                id = "order-date"
+                name = "date"
+                type = "date"
+                min = "2026-01-01"
+                max = "2026-12-31"
+        </div>
+
+        <div class = "form-field">
+          <label for = "order-comment">Комментарий</label>
+          <textarea
+            id = "order-comment"
+            name = "comment"
+            rows = "4"
+            placeholder = "Введите комментарий"
+          ></textarea>
+        </div>
+
+        <div class = "form-field__checkbox">
+          <label for = "order-agree">
+            <input
+              id = "order-agree"
+              name = "agree"
+              type = "checkbox"
+              required
+            >
+            Я согласен на обработку персональных данных
+          </label>
+        </div>
+
+        <div class = "form-field__buttons">
+          <button type = "button" id = "close-dialog">Закрыть</button>
+          <button type = "submit">Отправить</button>
+        </div>
+    </form>
+    </dialog>
+
+    <p class = "success-message" id = "success-message" hidden>
+      Заявка успешно отправлена!
+    </p>
+
+  </body>
 </html>
