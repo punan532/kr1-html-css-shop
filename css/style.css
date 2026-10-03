@@ -2,6 +2,16 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
+
 :root {
   --color-bg: #ffffff;
   --color-text: #222222;
@@ -249,4 +259,20 @@ footer {
   padding: var(--space-md);
   border-left: 4px solid #168a2f;
   background-color: #eefaf0;
+}
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
 }
