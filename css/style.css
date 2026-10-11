@@ -70,14 +70,18 @@ section h2 {
 }
 
 .site-header {
+    display: flex;
+    align-items: center; 
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .site-logo{
-    font-weight: bold;
-    text-decoration: none;
-    color:cornflowerblue
+    height: 40px;   /* размер подберите под шапку */
+    width: auto;
+    display: block;
+    margin-top: 5px;
 }
 
 .site-nav__list {
@@ -86,7 +90,7 @@ section h2 {
   justify-content: center;
   align-items: center;
   gap: var(--space-md);
-  padding: 0;
+  padding-left: 260px;
   margin: var(--space-md) 0 0;
   list-style: none;
 }
@@ -288,14 +292,22 @@ footer {
   color: var(--color-muted);
 }
 
-.breadcrumbs a {
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs__link {
   color: var(--color-primary);
 }
 
-.breadcrumbs span::before {
+.breadcrumbs__current::before {
   content: " / ";
   color: var(--color-muted);
 }
+
 
 .products-grid {
   display: grid;
